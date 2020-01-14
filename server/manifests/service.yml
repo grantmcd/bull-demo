@@ -1,10 +1,25 @@
 apiVersion: v1
-kind: Service
-metadata:
-  name: bull-server
-spec:
-  type: LoadBalancer
-  ports:
-    - port: 80
-  selector:
-    app: bull-server
+  kind: Service
+  metadata:
+    creationTimestamp: "2020-01-13T20:09:02Z"
+    labels:
+      app: bull-server
+    name: bull-server-service
+    namespace: default
+    resourceVersion: "33491"
+    selfLink: /api/v1/namespaces/default/services/bull-server-service
+    uid: d0d06afa-406d-4ca9-b6a1-ab5c085d7062
+  spec:
+    clusterIP: 10.96.79.29
+    externalTrafficPolicy: Cluster
+    ports:
+    - nodePort: 31485
+      port: 3000
+      protocol: TCP
+      targetPort: 80
+    selector:
+      app: bull-server
+    sessionAffinity: None
+    type: LoadBalancer
+  status:
+    loadBalancer: {}
