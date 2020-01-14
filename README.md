@@ -11,6 +11,6 @@ The `bull-worker` deployment can be scaled up or down as needed to process the j
 
 ## Prerequisites
 
-Add a redis DB, to your kubernetes cluster. Easiest way to do this is with helm. Run `helm install stable/redis --generate-name`
+Add a redis DB to your kubernetes cluster. Easiest way to do this is with helm. Run `helm install stable/redis --generate-name`
 
 Right now the connection config values are hardcoded to my local settings, but I will update this repo at some point to use environment variables.
