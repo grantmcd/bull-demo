@@ -1,6 +1,5 @@
 # bull-demo
 
-
 This repo was a POC to demonstrate how a bull queue can function inside of a kubernetes cluster.
 
 The `bull-server` application has a `/queues` endpoint where you can view the status of the bull queues and their jobs.
@@ -13,4 +12,8 @@ The `bull-worker` deployment can be scaled up or down as needed to process the j
 
 Add a redis DB to your kubernetes cluster. Easiest way to do this is with helm. Run `helm install stable/redis --generate-name`
 
-Right now the connection config values are hardcoded to my local settings, but I will update this repo at some point to use environment variables.
+In order for the container to connect to the redis DB, create a configMap called "config" in the same namespace as the containers and create three keys in it with the appropriate values:
+
+- REDIS_HOST
+- REDIS_PASSWORD
+- REDIS_PORT

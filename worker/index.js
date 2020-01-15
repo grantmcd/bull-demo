@@ -3,9 +3,9 @@ const sleep = require("util").promisify(setTimeout);
 
 const jobQueue = new Queue("jobs", {
   redis: {
-    port: 6379,
-    host: "redis-1578945932-master.default.svc.cluster.local",
-    password: "Ym1nTKVNnz"
+    port: process.env.REDIS_PORT,
+    host: process.env.REDIS_HOST,
+    password: process.env.REDIS_PASSWORD
   }
 }); // Specify Redis connection using object
 
