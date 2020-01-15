@@ -1,6 +1,6 @@
 # bull-demo
 
-This repo was a POC to demonstrate how a bull queue can function inside of a kubernetes cluster.
+This repo was a POC to demonstrate how a [bull queue](https://github.com/OptimalBits/bull) can function inside of a kubernetes cluster.
 
 The `bull-server` application has a `/queues` endpoint where you can view the status of the bull queues and their jobs.
 
