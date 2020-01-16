@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
     jobQueue.add(req.query);
   }
 
-  res.send(`Hello world ${numJobs} job(s) Enqueud\n`);
+  res.send(`${numJobs} job(s) Enqueued\n`);
 });
 
 app.use("/queues", UI);
